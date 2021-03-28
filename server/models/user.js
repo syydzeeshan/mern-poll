@@ -15,11 +15,11 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    polls: [{type: mongoose.Schema.Types.ObjectId, ref: 'Poll'}]
+    polls: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Poll' }]
 
 });
 
-userSchema.pre('save', async function(next){
+userSchema.pre('save', async function (next) {
     try{
         if (!this.isModified('password')) {
             return next();
