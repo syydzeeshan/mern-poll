@@ -4,7 +4,7 @@ import { store } from '../store';
 
 const ErrorMessage = ({error}) => 
      (<Fragment>{
-    error && <div>{error.message}</div>
+    error.message && <div className="error">{error.message}</div>
     }</Fragment>);
 
 export default connect(store => ({error: store.error}))(ErrorMessage);

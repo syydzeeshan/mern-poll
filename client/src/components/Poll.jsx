@@ -11,7 +11,7 @@ const color = () => {
 const Poll = ({ poll, vote }) => {
 
     const answers = poll.options && poll.options.map( option => (
-        <button onClick={() => vote(poll._id, {answer: option.option})} key={option._id}>{option.option}</button>
+        <button className="button" onClick={() => vote(poll._id, {answer: option.option})} key={option._id}>{option.option}</button>
     ));
 
 
@@ -29,8 +29,8 @@ const Poll = ({ poll, vote }) => {
 
     return (
     <div>
-        <h3>{poll.question}</h3>
-        <div>{answers}</div>
+        <h3 className="poll-title">{poll.question}</h3>
+        <div className="button_center">{answers}</div>
          {poll.options && <Pie data={data} />}
     </div>
     );
